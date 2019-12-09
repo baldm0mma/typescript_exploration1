@@ -5,8 +5,9 @@ const filterByTerm = (input, searchTerm) => {
     if (!input.length)
         throw Error("input cannot be empty");
     const regex = new RegExp(searchTerm, "i");
-    return input.filter(function (arrayElement) {
+    return input.filter(arrayElement => {
         return arrayElement.url.match(regex);
     });
 };
-filterByTerm("input string", "java");
+const urls = [{ url: "string_1" }, { url: "string_2" }, { url: "string_3" }];
+filterByTerm(urls, "java");

@@ -1,9 +1,18 @@
-const filterByTerm = (input: Array<string>, searchTerm: string) => {
+interface Link {
+  description: string;
+  id: number;
+  url: string;
+}
+
+const filterByTerm = (input: Array<Link>, searchTerm: string) => {
   if (!searchTerm) throw Error("searchTerm cannot be empty");
   if (!input.length) throw Error("input cannot be empty");
   const regex = new RegExp(searchTerm, "i");
-  return input.filter(function(arrayElement) {
+  return input.filter(arrayElement => {
     return arrayElement.url.match(regex);
   });
 };
-filterByTerm(["string1", "string2", "string3", "string 4"], "java");
+
+const urls = [{ url: "string_1" }, { url: "string_2" }, { url: "string_3" }];
+
+filterByTerm(urls, "java");
