@@ -9,5 +9,9 @@ const filterByTerm = (input, searchTerm) => {
         return arrayElement.url.match(regex);
     });
 };
-const urls = [{ url: "string_1" }, { url: "string_2" }, { url: "string_3" }];
-filterByTerm(urls, "java");
+const obj1 = { url: "string_1" };
+const obj2 = { url: "string_2" };
+const obj3 = { url: "string_3" };
+const urlLinks = [obj1, obj2, obj3];
+const term = "java";
+filterByTerm(urlLinks, term);

@@ -1,6 +1,6 @@
 interface Link {
-  description: string;
-  id: number;
+  description?: string;
+  id?: number;
   url: string;
 }
 
@@ -13,6 +13,12 @@ const filterByTerm = (input: Array<Link>, searchTerm: string) => {
   });
 };
 
-const urls = [{ url: "string_1" }, { url: "string_2" }, { url: "string_3" }];
+const obj1: Link = { url: "string_1" };
+const obj2: Link = { url: "string_2" };
+const obj3: Link = { url: "string_3" };
 
-filterByTerm(urls, "java");
+const urlLinks: Array<Link> = [obj1, obj2, obj3];
+
+const term: string = "java";
+
+filterByTerm(urlLinks, term);
