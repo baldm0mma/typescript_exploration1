@@ -2,14 +2,20 @@ interface Person {
   name: string;
   city: string;
   age: number;
-  printDetails(): string;
+  printHello(): string;
 }
 
 const tom: Person = {
   name: "Tom",
   city: "Munchin",
   age: 33,
-  printDetails: function() {
-    return `${this.name} - ${this.city}`;
+  printHello: function() {
+    return `Hello, my name is ${this.name} from ${this.city}.`;
   }
 };
+
+const makeTom = (person: Person, a: string, b: string): string => {
+  return `${tom.name} from ${tom.city} is a real ${a}${b}!`;
+};
+
+makeTom(tom, "dick", "bag");

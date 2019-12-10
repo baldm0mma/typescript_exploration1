@@ -3,7 +3,11 @@ const tom = {
     name: "Tom",
     city: "Munchin",
     age: 33,
-    printDetails: function () {
-        return `${this.name} - ${this.city}`;
+    printHello: function () {
+        return `Hello, my name is ${this.name} from ${this.city}.`;
     }
 };
+const makeTom = (person, a, b) => {
+    return `${tom.name} from ${tom.city} is a real ${a}${b}!`;
+};
+makeTom(tom, "dick", "bag");
